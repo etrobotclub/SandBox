@@ -60,17 +60,19 @@ TortoiseGitによるGUI入力でもOKです。
 
 ===========================================================================================
 [Practice 05]ファイルを追加(add)する
-・コマンド[1]を実行し、ファイル(例：test_xxx.txt)を作成する
-・コマンド[2]を実行し、新規ファイル(例：test_xxx.txt)が赤色表示されていることを確認する
-・コマンド[3]を実行し、ファイルを追加する
+・コマンド[1]を実行し、ディレクトリ(test_xxx)を作成する
+・コマンド[2]を実行し、ファイル(test_xxx.txt)を作成する
+・コマンド[3]を実行し、新規ファイル(例：test_xxx.txt)が赤色表示されていることを確認する
+・コマンド[4]を実行し、ファイルを追加する
 
 [チェック]
 コマンド[2]を実行し、表示が赤色→緑色になっていればOK
 
 [コマンド]
-[1]	touch test_xxx.txt
-[2]	git status
-[3]	git add test_xxx.txt
+[1]	mkdir test_xxx
+[2]	touch test_xxx.txt
+[3]	git status
+[4]	git add test_xxx.txt
 
 ===========================================================================================
 [Practice 06]ファイルの変更をローカルリポジトリに登録(commit)する
@@ -84,19 +86,34 @@ TortoiseGitによるGUI入力でもOKです。
 [1]	git commit -m "test_xxxのコミット"
 [2]	git status
 
-
 ===========================================================================================
 [Practice 07]ファイルの変更をリモートリポジトリに登録(push)する
 ・コマンド[1]を実行し、ファイルの変更をプッシュする
 
 [チェック]
-コマンド[2]を実行し、緑色で表示されていたファイル(test_xxx.txt)が消えて
-「nothing to commit, working tree clean」の表示がでていればOK
+コマンド[2]を実行し、
+「Your branch is up to date with 'origin/Dev_xxx'.」の表示がでていればプッシュ成功
+
+リモートリポジトリ[https://github.com/etrobotclub/SandBox]にアクセスし、
+ブランチをmaster→Dev_xxxに切り替えて、変更が反映されていればOK
 
 [コマンド]
 [1]	git push
 [2]	git status
 
+===========================================================================================
+[Practice 08]masterにマージする
+・コマンド[1]を実行し、masterにチェックアウトする
+・コマンド[2]を実行し、masterを最新にする
+・コマンド[3]を実行し、ローカルリポジトリのDev_xxx→masterへ変更をマージする
+・コマンド[4]を実行し、ローカルリポジトリのmaster→リモートリポジトリのmasterへ変更をマージする
 
+[コマンド]
+[1]	git checkout master
+[2]	git pull
+[3]	git merge Dev_xxx
+[4]	git push
 
+リモートリポジトリ[https://github.com/etrobotclub/SandBox]にアクセスし、
+ブランチをmasterに切り替えて、変更が反映されていればOK
 
